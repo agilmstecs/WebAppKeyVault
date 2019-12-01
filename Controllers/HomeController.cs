@@ -15,7 +15,7 @@ namespace WebAppKeyVault.Controllers
         public IActionResult Index()
         {            
             var kv = new KeyVaultClient(GetToken);
-            var vaultUrl = "https://mykvana.vault.azure.net/";
+            var vaultUrl = "Vault URI";
             var secretName = "mysecret";
             var mysecret = "";
             try
@@ -30,8 +30,8 @@ namespace WebAppKeyVault.Controllers
         }
         public async Task<string> GetToken(string authority, string resource, string scope)
         {
-            var clientId = "25d2d6bc-3698-48fb-8236-833546521c73";
-            var clientSecret = "nNd5/aDy4:=p49TiggZl[2sOUjg5tQ@0";
+            var clientId = "";
+            var clientSecret = "";
             var authContext = new Microsoft.IdentityModel.Clients.ActiveDirectory.AuthenticationContext(authority);
             ClientCredential clientCred = new ClientCredential(clientId, clientSecret);
             AuthenticationResult result = await authContext.AcquireTokenAsync(resource, clientCred);
